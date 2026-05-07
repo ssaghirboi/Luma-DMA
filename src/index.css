@@ -1,43 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap');
 
+/* Mobile-first tokens: calm studio surface + approachable accent */
 :root {
-  --display: 'Syne', system-ui, sans-serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
+  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --display: 'Instrument Sans', var(--sans);
 
-  --bg: #0c0d10;
-  --surface: #12141a;
-  --surface-muted: #0f1015;
-  --text-strong: #f4f2eb;
-  --text-muted: #a39e93;
-  --border: rgba(244, 242, 235, 0.08);
-  --border-strong: rgba(244, 242, 235, 0.18);
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --surface-muted: #f0eeea;
+  --text-strong: #141210;
+  --text-muted: #5b5852;
+  --text-subtle: #8a8680;
 
-  --accent: #f4b942;
-  --accent-deep: #d4912a;
-  --accent-glow: rgba(244, 185, 66, 0.55);
-  --btn-primary-text: #1a1408;
+  --border: rgba(20, 18, 16, 0.08);
+  --border-strong: rgba(20, 18, 16, 0.14);
 
-  --luma: rgba(244, 185, 66, 0.22);
-  --luma-soft: rgba(255, 214, 140, 0.12);
+  /* KlientBoost-adjacent warmth */
+  --accent: #ee5a3f;
+  --accent-hover: #d94d34;
+  --accent-soft: rgba(238, 90, 63, 0.12);
 
-  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
-  --shadow-accent: 0 12px 28px rgba(244, 185, 66, 0.22);
-  --shadow-accent-strong: 0 16px 36px rgba(244, 185, 66, 0.32);
+  --focus: #1a1714;
 
-  color-scheme: dark;
+  --header-h: 3.75rem;
+  --dock-h: 4.25rem;
+  --thumb-min: 2.875rem;
+
+  --page-pad: 1.25rem;
+  --section-y: 2.75rem;
+  --radius-lg: 1.25rem;
+
+  color-scheme: light;
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 106.25%; /* ~17px: easier thumb-distance reading without zoom */
+  line-height: 1.55;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0e0f;
+    --surface: #161618;
+    --surface-muted: #121214;
+    --text-strong: #f4f3f1;
+    --text-muted: #b7b4ad;
+    --text-subtle: #8f8c86;
+
+    --border: rgba(244, 243, 241, 0.08);
+    --border-strong: rgba(244, 243, 241, 0.16);
+
+    --accent: #ff7a5c;
+    --accent-hover: #ff957c;
+    --accent-soft: rgba(255, 122, 92, 0.14);
+
+    --focus: #f4f3f1;
+
+    color-scheme: dark;
+  }
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -47,32 +93,10 @@ body {
   color: var(--text-muted);
 }
 
-#root {
-  min-height: 100svh;
+body.nav-open {
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #faf8f4;
-    --surface: #ffffff;
-    --surface-muted: #f3efe8;
-    --text-strong: #161411;
-    --text-muted: #5c574f;
-    --border: rgba(22, 20, 17, 0.08);
-    --border-strong: rgba(22, 20, 17, 0.18);
-
-    --accent: #c07812;
-    --accent-deep: #9a5f0c;
-    --accent-glow: rgba(192, 120, 18, 0.35);
-    --btn-primary-text: #fffaf0;
-
-    --luma: rgba(192, 120, 18, 0.18);
-    --luma-soft: rgba(255, 196, 102, 0.2);
-
-    --shadow-soft: 0 14px 34px rgba(22, 20, 17, 0.08);
-    --shadow-accent: 0 12px 26px rgba(192, 120, 18, 0.18);
-    --shadow-accent-strong: 0 16px 34px rgba(192, 120, 18, 0.26);
-
-    color-scheme: light;
-  }
+#root {
+  min-height: 100svh;
 }
