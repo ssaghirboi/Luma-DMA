@@ -1,24 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap');
 
+/* Light “open sky + nebula” palette — abstract cosmic mood, original art direction */
 :root {
   --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --display: 'Instrument Sans', var(--sans);
 
-  --bg: #f7f6f3;
-  --surface: #ffffff;
-  --surface-muted: #f0eeea;
-  --text-strong: #141210;
-  --text-muted: #5b5852;
-  --text-subtle: #8a8680;
+  --bg: #e9eefc;
+  --surface: #fcfdff;
+  --surface-muted: #dfe6f9;
+  --text-strong: #161c36;
+  --text-muted: #4a5472;
+  --text-subtle: #6f7894;
 
-  --border: rgba(20, 18, 16, 0.08);
-  --border-strong: rgba(20, 18, 16, 0.14);
+  --border: rgba(22, 28, 54, 0.09);
+  --border-strong: rgba(22, 28, 54, 0.16);
 
-  --accent: #ee5a3f;
-  --accent-hover: #d94d34;
-  --accent-soft: rgba(238, 90, 63, 0.14);
+  --grid-line: rgba(67, 78, 150, 0.07);
 
-  --focus: #1a1714;
+  /* Warm starlight */
+  --accent: #dfb22d;
+  --accent-hover: #c29615;
+  --accent-soft: rgba(223, 178, 45, 0.2);
+
+  /* Deep space violet (primary actions) */
+  --cosmic: #5847e8;
+  --cosmic-deep: #3f32c4;
+  --cosmic-soft: rgba(88, 71, 232, 0.14);
+
+  --focus: var(--cosmic-deep);
 
   --header-h: 3.75rem;
   --dock-h: 4.25rem;
@@ -58,7 +67,11 @@ html {
 body {
   margin: 0;
   min-height: 100svh;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 120% 85% at 50% -8%, rgba(255, 255, 255, 0.75), transparent 55%),
+    radial-gradient(ellipse 85% 50% at 100% 0%, rgba(200, 210, 255, 0.35), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 0% 20%, rgba(255, 230, 176, 0.22), transparent 48%);
   color: var(--text-muted);
 }
 

@@ -111,6 +111,8 @@ function App() {
         <div className="hero-bg" aria-hidden>
           <div className="hero-blob hero-blob-a" />
           <div className="hero-blob hero-blob-b" />
+          <div className="star-sweep" />
+          <div className="starfield" />
           <div className="hero-grid" />
         </div>
 

@@ -67,7 +67,11 @@
 }
 
 .logo-accent {
-  color: var(--accent);
+  background: linear-gradient(118deg, #e8bc2f 14%, var(--cosmic) 58%, #3aabbf 104%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .menu-btn {
@@ -163,7 +167,7 @@
 }
 
 .drawer-link:active {
-  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--cosmic-soft) 55%, var(--accent-soft));
 }
 
 .drawer-link-muted {
@@ -180,7 +184,7 @@
   border: none;
   padding: 0;
   margin: 0;
-  background: rgba(247, 246, 243, 0.35);
+  background: rgba(233, 238, 252, 0.42);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -208,8 +212,8 @@ main {
   inset: -20%;
   opacity: 0.45;
   background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 65% at 50% -5%, black 20%, transparent 70%);
 }
@@ -226,8 +230,9 @@ main {
   top: -35%;
   left: -35%;
   background: radial-gradient(
-    circle at 35% 35%,
-    rgba(238, 90, 63, 0.16),
+    circle at 35% 32%,
+    rgba(154, 140, 255, 0.28),
+    rgba(120, 190, 255, 0.12) 45%,
     transparent 62%
   );
 }
@@ -238,10 +243,67 @@ main {
   top: -8%;
   right: -28%;
   background: radial-gradient(
-    circle at 60% 40%,
-    rgba(238, 90, 63, 0.1),
-    rgba(247, 246, 243, 0) 62%
+    circle at 58% 38%,
+    rgba(248, 198, 120, 0.24),
+    rgba(58, 190, 210, 0.14) 48%,
+    transparent 61%
   );
+}
+
+.star-sweep {
+  position: absolute;
+  inset: -62%;
+  opacity: 0.35;
+  background: conic-gradient(
+    from 222deg,
+    transparent 0deg,
+    rgba(108, 95, 255, 0.07) 64deg,
+    transparent 136deg,
+    rgba(237, 201, 90, 0.06) 210deg,
+    transparent 294deg,
+    transparent 360deg
+  );
+  animation: star-sweep-rotate 78s linear infinite;
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  opacity: 0.58;
+  background-image:
+    radial-gradient(circle at 10% 16%, rgba(255, 234, 170, 0.95) 0, transparent 44%),
+    radial-gradient(circle at 93% 9%, rgba(198, 214, 255, 0.82) 0, transparent 40%),
+    radial-gradient(circle at 72% 21%, rgba(255, 255, 255, 0.92) 0, transparent 36%),
+    radial-gradient(circle at 43% 11%, rgba(255, 214, 130, 0.78) 0, transparent 42%),
+    radial-gradient(circle at 54% 30%, rgba(110, 210, 224, 0.55) 0, transparent 34%),
+    radial-gradient(circle at 26% 44%, rgba(255, 244, 210, 0.82) 0, transparent 38%),
+    radial-gradient(circle at 82% 40%, rgba(255, 255, 255, 0.8) 0, transparent 34%),
+    radial-gradient(circle at 16% 64%, rgba(188, 200, 255, 0.58) 0, transparent 40%),
+    radial-gradient(circle at 61% 57%, rgba(255, 220, 154, 0.68) 0, transparent 38%),
+    radial-gradient(circle at 87% 66%, rgba(255, 255, 255, 0.86) 0, transparent 34%),
+    radial-gradient(circle at 41% 77%, rgba(130, 180, 255, 0.48) 0, transparent 37%),
+    radial-gradient(circle at 71% 88%, rgba(255, 216, 128, 0.72) 0, transparent 34%),
+    radial-gradient(circle at 13% 90%, rgba(255, 255, 255, 0.6) 0, transparent 32%);
+  background-size: 100% 100%;
+  animation: starfield-twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes star-sweep-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes starfield-twinkle {
+  from {
+    opacity: 0.52;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0.76;
+    transform: translate3d(-0.5%, 1.25%, 0);
+  }
 }
 
 @supports (animation-timeline: scroll()) {
@@ -385,13 +447,16 @@ main {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 14px 36px rgba(238, 90, 63, 0.24);
+  background: linear-gradient(152deg, var(--cosmic) 0%, #6f62f5 52%, var(--cosmic-deep) 100%);
+  color: #fdfdff;
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.22) inset,
+    0 14px 38px rgba(72, 58, 200, 0.28),
+    0 0 0 1px rgba(255, 222, 150, 0.18);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: linear-gradient(152deg, #6555f7 0%, var(--cosmic-deep) 100%);
 }
 
 .btn-secondary {
@@ -401,8 +466,8 @@ main {
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: color-mix(in srgb, var(--cosmic) 42%, var(--border-strong));
+  color: var(--cosmic-deep);
 }
 
 .section {
@@ -415,7 +480,10 @@ main {
 }
 
 .section-work {
-  background: color-mix(in srgb, var(--surface-muted) 55%, transparent);
+  background:
+    radial-gradient(ellipse 90% 70% at 15% -10%, rgba(255, 220, 148, 0.12), transparent 55%),
+    radial-gradient(ellipse 80% 65% at 95% 20%, rgba(130, 120, 255, 0.1), transparent 52%),
+    color-mix(in srgb, var(--surface-muted) 62%, transparent);
 }
 
 .section-kicker {
@@ -452,7 +520,10 @@ main {
 @media (hover: hover) {
   .work-tile:hover {
     transform: translateY(-4px);
-    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    border-color: color-mix(in srgb, var(--cosmic) 28%, var(--border));
+    box-shadow:
+      0 28px 55px rgba(34, 40, 92, 0.08),
+      0 0 0 1px rgba(255, 226, 160, 0.25);
   }
 }
 
@@ -515,7 +586,7 @@ main {
 .footer-link {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--cosmic);
   text-decoration: none;
   min-height: 2.75rem;
   display: inline-flex;
@@ -577,10 +648,17 @@ main {
 }
 
 .dock-primary {
-  background: var(--accent);
-  color: #fff;
-  border: 1px solid transparent;
-  box-shadow: 0 -4px 26px rgba(238, 90, 63, 0.18);
+  background: linear-gradient(
+    154deg,
+    var(--cosmic) 0%,
+    #7568fb 54%,
+    var(--cosmic-deep) 100%
+  );
+  color: #fdfdff;
+  border: 1px solid color-mix(in srgb, #ffe8a8 55%, transparent);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.22) inset,
+    0 -4px 26px rgba(68, 56, 195, 0.22);
 }
 
 /* Scroll-triggered fades */
@@ -632,8 +710,15 @@ main {
 
   .hero-blob-a,
   .hero-blob-b,
-  .hero-grid {
+  .hero-grid,
+  .star-sweep,
+  .starfield {
     animation: none !important;
+  }
+
+  .starfield {
+    opacity: 0.6;
+    transform: none;
   }
 
   .btn:hover,
@@ -742,8 +827,8 @@ main {
   }
 
   .header-gh:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: color-mix(in srgb, var(--cosmic) 45%, var(--border-strong));
+    color: var(--cosmic-deep);
   }
 
   main {
