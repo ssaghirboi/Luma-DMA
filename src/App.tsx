@@ -12,9 +12,10 @@ function App() {
           Luma<span className="logo-accent">DMA</span>
         </a>
         <nav className="nav" aria-label="Primary">
+          <a href="#services">Services</a>
           <a href="#approach">Approach</a>
-          <a href="#signals">Signals</a>
-          <a href="#start">Start</a>
+          <a href="#results">Results</a>
+          <a href="#contact">Contact</a>
         </nav>
         <a className="btn btn-ghost" href={REPO} target="_blank" rel="noreferrer">
           GitHub
@@ -23,86 +24,119 @@ function App() {
 
       <main id="top">
         <section className="hero">
-          <p className="eyebrow">Design · Motion · Architecture</p>
+          <p className="eyebrow">Digital Marketing Agency</p>
           <h1 className="hero-title">
-            Light up the path from idea to shipped product.
+            Campaigns, creative, and performance—in one luminous strategy.
           </h1>
           <p className="hero-lede">
-            Luma DMA is a focused studio surface for brand, interface, and launch
-            workflows—built so your team can move quickly without losing craft.
+            Luma DMA helps brands grow with clear positioning, standout creative, and
+            accountable media. From awareness to conversion, we light up the full funnel
+            so spend turns into measurable momentum.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#start">
-              Plan a build
+            <a className="btn btn-primary" href="#contact">
+              Start a project
             </a>
-            <a className="btn btn-outline" href={REPO} target="_blank" rel="noreferrer">
-              View repository
+            <a className="btn btn-outline" href="#services">
+              See services
             </a>
           </div>
         </section>
 
-        <section id="approach" className="section">
-          <h2 className="section-title">Approach</h2>
+        <section id="services" className="section">
+          <h2 className="section-title">What we run</h2>
           <p className="section-intro">
-            Three rails keep momentum high while quality stays intentional.
+            Channel‑agnostic execution with a performance backbone—not disconnected tactics.
           </p>
           <ul className="cards">
             <li className="card">
-              <h3>Illuminate</h3>
+              <h3>Strategy &amp; brand</h3>
               <p>
-                Clarify positioning, narrative, and visual language before pixels
-                multiply—so downstream decisions stay coherent.
+                Messaging, visual identity guidance, and go‑to‑market plans tuned to your
+                audiences—so every touchpoint tells one cohesive story.
               </p>
             </li>
             <li className="card">
-              <h3>Shape</h3>
+              <h3>Paid media</h3>
               <p>
-                Design systems and interaction patterns that scale with your product,
-                not against it.
+                Search, social, and programmatic campaigns structured around targets,
+                creative testing, and efficient scaling—not vanity metrics.
               </p>
             </li>
             <li className="card">
-              <h3>Accelerate</h3>
+              <h3>Content &amp; SEO</h3>
               <p>
-                Ship in tight loops with instrumentation and feedback channels baked in
-                from day one.
+                Site architecture, on‑page optimization, and editorial calendars built to
+                earn qualified traffic and support conversion paths.
               </p>
             </li>
           </ul>
         </section>
 
-        <section id="signals" className="section section-muted">
-          <h2 className="section-title">What good looks like</h2>
+        <section id="approach" className="section section-muted">
+          <h2 className="section-title">How we work</h2>
+          <p className="section-intro">
+            A simple operating rhythm keeps teams aligned and budgets accountable.
+          </p>
+          <ul className="cards">
+            <li className="card">
+              <h3>Discover</h3>
+              <p>
+                Audiences, competitors, and funnel gaps—mapped with data and interviews so
+                priorities are obvious before spend turns on.
+              </p>
+            </li>
+            <li className="card">
+              <h3>Design</h3>
+              <p>
+                Creative systems and landing experiences engineered for testing—variants,
+                hooks, and CTAs that iterate toward winners.
+              </p>
+            </li>
+            <li className="card">
+              <h3>Optimize</h3>
+              <p>
+                Weekly tightening: bidding, audiences, creative fatigue checks, and
+                reporting you can actually act on.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section id="results" className="section">
+          <h2 className="section-title">What clients should expect</h2>
           <ul className="signals">
             <li>
               <span className="signal-dot" aria-hidden />
-              Audience‑level messaging that matches the product promise.
+              Attribution and dashboards aligned to business outcomes—not platform‑default
+              fluff.
             </li>
             <li>
               <span className="signal-dot" aria-hidden />
-              Interfaces that feel calm under load—readable hierarchy and motion with
-              purpose.
+              Creative that respects your brand while staying bold enough to win auctions
+              and attention.
             </li>
             <li>
               <span className="signal-dot" aria-hidden />
-              Launch artifacts your team can reuse: tokens, components, and narrative
-              snippets.
+              Clear ownership: who ships creative, who manages media, and how decisions get
+              documented.
             </li>
           </ul>
         </section>
 
-        <section id="start" className="section cta">
-          <h2 className="section-title">Open the repo and make it yours</h2>
+        <section id="contact" className="section cta">
+          <h2 className="section-title">Let’s talk growth</h2>
           <p className="cta-copy">
-            This site ships as a Vite + React starter wired for fast iteration. Fork it,
-            swap the copy, and deploy wherever you host static apps.
+            Tell us your goals, timeline, and markets—we’ll reply with a sensible scope.
+            This site is also an open starter you can fork from GitHub if you’re building
+            your own agency presence.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={REPO} target="_blank" rel="noreferrer">
-              Open GitHub
+            <a className="btn btn-primary" href="mailto:hello@lumadma.com">
+              Email hello@lumadma.com
             </a>
-            <a className="btn btn-outline" href="mailto:hello@example.com">
-              Email hello@example.com
+            <a className="btn btn-outline" href={REPO} target="_blank" rel="noreferrer">
+              View on GitHub
             </a>
           </div>
         </section>
@@ -110,7 +144,7 @@ function App() {
 
       <footer className="footer">
         <p>
-          © {new Date().getFullYear()} Luma DMA ·{' '}
+          © {new Date().getFullYear()} Luma DMA · Digital Marketing Agency ·{' '}
           <a href={REPO} target="_blank" rel="noreferrer">
             Source
           </a>
