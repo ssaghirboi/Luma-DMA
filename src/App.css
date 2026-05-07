@@ -396,10 +396,15 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .hero-copy {
-  max-width: 22ch;
+  /* `ch` on this wrapper inherited body size (~17px), so old `22ch` ≈ narrow column → clipped mega type */
+  width: 100%;
+  max-width: min(94vw, 44rem);
+  overflow: visible;
 }
 
 .mega-headline {
@@ -410,13 +415,19 @@ main {
   letter-spacing: -0.045em;
   margin: 0;
   color: var(--text-strong);
+  overflow: visible;
+  text-wrap: balance;
 }
 
 .mega-line {
   display: block;
+  overflow: visible;
 }
 
 .mega-line-soft {
+  /* Extra inline room so WebKit doesn’t clip the last glyphs with background-clip: text */
+  padding-inline: 0.06em;
+  margin-inline: -0.06em;
   background: linear-gradient(
     108deg,
     var(--text-strong) 0%,
@@ -427,6 +438,8 @@ main {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .micro-tag {
@@ -728,6 +741,7 @@ main {
 /* Scroll reveals */
 .reveal {
   opacity: 0;
+  overflow: visible;
   will-change: opacity, transform;
   transition-property: opacity, transform;
   transition-duration: 1.05s;
