@@ -1,13 +1,12 @@
 import { useEffect, useId, useState } from 'react'
+import { ScrollReveal } from './ScrollReveal'
 import './App.css'
 
 const REPO = 'https://github.com/ssaghirboi/Luma-DMA'
 
 const NAV = [
-  { href: '#services', label: 'Services' },
-  { href: '#approach', label: 'How we work' },
-  { href: '#results', label: 'Why us' },
-  { href: '#contact', label: 'Say hi' },
+  { href: '#work', label: 'Work' },
+  { href: '#contact', label: 'Contact' },
 ] as const
 
 function App() {
@@ -109,149 +108,80 @@ function App() {
       ) : null}
 
       <main id="main">
-        <div className="hero-glow" aria-hidden />
+        <div className="hero-bg" aria-hidden>
+          <div className="hero-blob hero-blob-a" />
+          <div className="hero-blob hero-blob-b" />
+          <div className="hero-grid" />
+        </div>
 
         <section className="hero" id="top">
-          <p className="eyebrow">Digital marketing agency · friendly by default</p>
-          <h1 className="hero-title">
-            Growth marketing that feels human—built for phones first.
-          </h1>
-          <p className="hero-lede">
-            We plan, creative-test, and optimize paid + organic so your next customer
-            finds you without the agency noise. Big clarity, small ego, numbers you can
-            share with finance.
-          </p>
-          <div className="hero-actions">
+          <ScrollReveal variant="up" className="hero-reveal-stack">
+            <p className="eyebrow">Digital marketing agency</p>
+          </ScrollReveal>
+          <ScrollReveal variant="up" delayMs={75} className="hero-reveal-stack">
+            <h1 className="hero-title">Bright growth. Quiet noise.</h1>
+          </ScrollReveal>
+          <ScrollReveal variant="up" delayMs={140} className="hero-actions hero-reveal-stack">
             <a className="btn btn-primary" href="#contact">
-              Get a free game plan
-            </a>
-            <a className="btn btn-secondary" href="#services">
-              Peek at services
-            </a>
-          </div>
-          <p className="hero-micro">
-            Typical reply same day. No pitch deck required—just your goals and messy
-            spreadsheets.
-          </p>
-        </section>
-
-        <section id="services" className="section">
-          <h2 className="section-label">Services</h2>
-          <h3 className="section-title">
-            Fewer spreadsheets. More “oh, that&apos;s actually working.”
-          </h3>
-          <p className="section-intro">
-            We keep the funnel simple on paper so execution stays sharp in-market.
-          </p>
-          <ul className="cards">
-            <li className="card">
-              <h4 className="card-title">Strategy &amp; brand story</h4>
-              <p>
-                Positioning, messaging, and visual guardrails—so campaigns sound like{' '}
-                <em>you</em>, not a generic template with your logo pasted on it.
-              </p>
-            </li>
-            <li className="card">
-              <h4 className="card-title">Paid media</h4>
-              <p>
-                Search + social buys with hypotheses, disciplined tests, and budget math
-                you can defend in a hallway conversation.
-              </p>
-            </li>
-            <li className="card">
-              <h4 className="card-title">Content &amp; SEO</h4>
-              <p>
-                Pages people land on intentionally: structure, snippets, editorial
-                cadence—all aimed at qualified visits, not empty traffic trophies.
-              </p>
-            </li>
-          </ul>
-        </section>
-
-        <section id="approach" className="section section-muted">
-          <h2 className="section-label">How we work</h2>
-          <h3 className="section-title">A rhythm you can predict (and thumbs can scan).</h3>
-          <p className="section-intro">
-            Short loops. Plain-language updates. No mystery retainers hiding behind jargon.
-          </p>
-          <ol className="steps">
-            <li>
-              <span className="step-num">1</span>
-              <div>
-                <strong className="step-title">Discover</strong>
-                <p>
-                  Audiences, offers, rivals, leaky steps—prioritized before we spend a
-                  dime.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span className="step-num">2</span>
-              <div>
-                <strong className="step-title">Design &amp; launch</strong>
-                <p>
-                  Creative batches + landing tweaks built to iterate fast, not posture in
-                  a deck.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span className="step-num">3</span>
-              <div>
-                <strong className="step-title">Optimize weekly</strong>
-                <p>
-                  Bids, audiences, fatigue, pacing—adjusted on a rhythm, with receipts.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <section id="results" className="section">
-          <h2 className="section-label">Why teams stick with us</h2>
-          <h3 className="section-title">Accountability minus the stern vibes.</h3>
-          <ul className="pill-list">
-            <li className="pill">Dashboards mapped to outcomes you actually bonus on</li>
-            <li className="pill">Creative bold enough for feeds, disciplined enough for brand</li>
-            <li className="pill">Clear owners: creative, media, reporting—named humans</li>
-          </ul>
-        </section>
-
-        <section id="contact" className="section cta-block">
-          <h2 className="section-label">Contact</h2>
-          <h3 className="section-title">Tell us where you&apos;re stuck. We&apos;ll map the boring-to-brilliant fixes.</h3>
-          <p className="cta-copy">
-            Drop goals, timelines, budgets (rough is fine). We reply with scope options—no
-            “gotcha” intro call theatrics—plus starter ideas you can steal even if we never
-            work together.
-          </p>
-          <div className="hero-actions cta-buttons">
-            <a className="btn btn-primary" href="mailto:hello@lumadma.com">
-              Email hello@lumadma.com
+              Let&apos;s talk
             </a>
             <a className="btn btn-secondary" href={REPO} target="_blank" rel="noreferrer">
-              Peek the site repo
+              Code
             </a>
-          </div>
+          </ScrollReveal>
+        </section>
+
+        <section id="work" className="section section-work">
+          <ScrollReveal variant="up-left">
+            <h2 className="section-kicker">What we ship</h2>
+          </ScrollReveal>
+          <ul className="work-grid">
+            {[
+              { t: 'Strategy', s: 'Positioning · story' },
+              { t: 'Paid', s: 'Search · social · scale', delay: 90 },
+              { t: 'SEO', s: 'Content · crawl · lift', delay: 180 },
+            ].map(({ t, s, delay = 0 }) => (
+              <li key={t}>
+                <ScrollReveal variant="scale" delayMs={delay}>
+                  <article className="work-tile">
+                    <h3 className="work-title">{t}</h3>
+                    <p className="work-sub">{s}</p>
+                  </article>
+                </ScrollReveal>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="contact" className="section section-cta">
+          <ScrollReveal variant="up-right">
+            <h2 className="cta-head">hello@lumadma.com</h2>
+          </ScrollReveal>
+          <ScrollReveal variant="up" delayMs={70} className="cta-actions">
+            <a className="btn btn-primary" href="mailto:hello@lumadma.com">
+              Email us
+            </a>
+          </ScrollReveal>
         </section>
       </main>
 
-      <footer className="footer">
-        <p className="footer-line">
-          © {new Date().getFullYear()} Luma DMA ·{' '}
-          <span className="footer-subtle">digital marketing agency</span>
-        </p>
-        <a className="footer-link" href={REPO} target="_blank" rel="noreferrer">
-          GitHub source
-        </a>
-      </footer>
+      <ScrollReveal variant="up" className="footer-wrap">
+        <footer className="footer">
+          <p className="footer-line">
+            © {new Date().getFullYear()} Luma DMA
+          </p>
+          <a className="footer-link" href={REPO} target="_blank" rel="noreferrer">
+            Repo
+          </a>
+        </footer>
+      </ScrollReveal>
 
       <aside className="thumb-dock" aria-label="Quick actions">
         <a className="dock-btn dock-mail" href="mailto:hello@lumadma.com">
-          Email
+          Mail
         </a>
         <a className="dock-btn dock-primary" href="#contact">
-          Plan intro
+          Chat
         </a>
       </aside>
     </div>
