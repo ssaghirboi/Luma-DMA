@@ -35,7 +35,7 @@ function App() {
         Skip to content
       </a>
 
-      <header className="header">
+      <header className="header header-airy">
         <a className="logo" href="#top" onClick={closeMenu}>
           Luma<span className="logo-accent">DMA</span>
         </a>
@@ -116,76 +116,74 @@ function App() {
           <div className="hero-grid" />
         </div>
 
-        <section className="hero" id="top">
-          <ScrollReveal variant="up" className="hero-reveal-stack">
-            <p className="eyebrow">Digital marketing agency</p>
-          </ScrollReveal>
-          <ScrollReveal variant="up" delayMs={75} className="hero-reveal-stack">
-            <h1 className="hero-title">Bright growth. Quiet noise.</h1>
-          </ScrollReveal>
-          <ScrollReveal variant="up" delayMs={140} className="hero-actions hero-reveal-stack">
-            <a className="btn btn-primary" href="#contact">
-              Let&apos;s talk
-            </a>
-            <a className="btn btn-secondary" href={REPO} target="_blank" rel="noreferrer">
-              Code
-            </a>
-          </ScrollReveal>
+        <section className="panel panel-hero" id="top">
+          <div className="panel-inner hero-inner">
+            <ScrollReveal variant="up" className="hero-copy">
+              <h1 className="mega-headline">
+                <span className="mega-line">Growth,</span>
+                <span className="mega-line mega-line-soft">elevated.</span>
+              </h1>
+              <p className="micro-tag">Luma DMA</p>
+            </ScrollReveal>
+
+            <ScrollReveal variant="scale" delayMs={110} className="hero-visual-wrap">
+              <div className="hero-visual" aria-hidden>
+                <div className="hero-visual-glare" />
+                <div className="hero-visual-aurora" />
+                <div className="hero-visual-core" />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal variant="up" delayMs={200} className="hero-links">
+              <a className="text-link-arrow" href="#work">
+                Explore <span aria-hidden className="text-link-chev" />
+              </a>
+              <a className="text-link-subtle" href={REPO} target="_blank" rel="noreferrer">
+                Open source
+              </a>
+            </ScrollReveal>
+          </div>
         </section>
 
-        <section id="work" className="section section-work">
-          <ScrollReveal variant="up-left">
-            <h2 className="section-kicker">What we ship</h2>
-          </ScrollReveal>
-          <ul className="work-grid">
-            {[
-              { t: 'Strategy', s: 'Positioning · story' },
-              { t: 'Paid', s: 'Search · social · scale', delay: 90 },
-              { t: 'SEO', s: 'Content · crawl · lift', delay: 180 },
-            ].map(({ t, s, delay = 0 }) => (
-              <li key={t}>
-                <ScrollReveal variant="scale" delayMs={delay}>
-                  <article className="work-tile">
-                    <h3 className="work-title">{t}</h3>
-                    <p className="work-sub">{s}</p>
-                  </article>
-                </ScrollReveal>
-              </li>
-            ))}
-          </ul>
+        <section className="panel panel-words" id="work">
+          <div className="panel-inner words-inner">
+            <ScrollReveal variant="up">
+              <p className="word-huge">Strategy</p>
+            </ScrollReveal>
+            <ScrollReveal variant="up" delayMs={100}>
+              <p className="word-huge word-huge-mid">Paid</p>
+            </ScrollReveal>
+            <ScrollReveal variant="up" delayMs={200}>
+              <p className="word-huge word-huge-end">SEO</p>
+            </ScrollReveal>
+          </div>
         </section>
 
-        <section id="contact" className="section section-cta">
-          <ScrollReveal variant="up-right">
-            <h2 className="cta-head">hello@lumadma.com</h2>
-          </ScrollReveal>
-          <ScrollReveal variant="up" delayMs={70} className="cta-actions">
-            <a className="btn btn-primary" href="mailto:hello@lumadma.com">
-              Email us
-            </a>
-          </ScrollReveal>
+        <section className="panel panel-contact" id="contact">
+          <div className="panel-inner contact-inner">
+            <ScrollReveal variant="scale">
+              <a className="contact-mail" href="mailto:hello@lumadma.com">
+                hello@lumadma.com
+              </a>
+            </ScrollReveal>
+          </div>
         </section>
       </main>
 
-      <ScrollReveal variant="up" className="footer-wrap">
-        <footer className="footer">
-          <p className="footer-line">
-            © {new Date().getFullYear()} Luma DMA
-          </p>
-          <a className="footer-link" href={REPO} target="_blank" rel="noreferrer">
-            Repo
-          </a>
-        </footer>
-      </ScrollReveal>
+      <footer className="footer footer-min">
+        <p className="footer-line">© {new Date().getFullYear()} Luma DMA</p>
+        <a className="footer-legal" href={REPO} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+      </footer>
 
-      <aside className="thumb-dock" aria-label="Quick actions">
-        <a className="dock-btn dock-mail" href="mailto:hello@lumadma.com">
-          Mail
-        </a>
-        <a className="dock-btn dock-primary" href="#contact">
-          Chat
-        </a>
-      </aside>
+      <a
+        className="float-pill"
+        href="mailto:hello@lumadma.com"
+        aria-label="Email Luma DMA"
+      >
+        Contact
+      </a>
     </div>
   )
 }
