@@ -120,9 +120,9 @@ function App() {
           </ScrollReveal>
           <ScrollReveal variant="up" delayMs={70}>
             <h1 className="hero-title">
-              Clean sites.
+              We're Luma.
               <br />
-              Strong results.
+              We build great websites.
             </h1>
           </ScrollReveal>
         </section>
