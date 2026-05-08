@@ -111,79 +111,60 @@ function App() {
         <div className="hero-bg" aria-hidden>
           <div className="hero-blob hero-blob-a" />
           <div className="hero-blob hero-blob-b" />
-          <div className="star-sweep" />
-          <div className="starfield" />
           <div className="hero-grid" />
         </div>
 
-        <section className="panel panel-hero" id="top">
-          <div className="panel-inner hero-inner">
-            <ScrollReveal variant="up" className="hero-copy">
-              <h1 className="mega-headline">
-                <span className="mega-line">Growth,</span>
-                <span className="mega-line mega-line-soft">elevated.</span>
-              </h1>
-              <p className="micro-tag">Luma DMA</p>
-            </ScrollReveal>
+        <section className="hero" id="top">
+          <ScrollReveal variant="up">
+            <p className="hero-kicker">Pages studio</p>
+          </ScrollReveal>
+          <ScrollReveal variant="up" delayMs={70}>
+            <h1 className="hero-title">
+              Clean sites.
+              <br />
+              Strong results.
+            </h1>
+          </ScrollReveal>
+        </section>
 
-            <ScrollReveal variant="scale" delayMs={110} className="hero-visual-wrap">
-              <div className="hero-visual" aria-hidden>
-                <div className="hero-visual-glare" />
-                <div className="hero-visual-aurora" />
-                <div className="hero-visual-core" />
-              </div>
-            </ScrollReveal>
+        <section id="work" className="section">
+          <ScrollReveal variant="up">
+            <div className="section-head">
+              <h2>Our Work</h2>
+            </div>
+          </ScrollReveal>
 
-            <ScrollReveal variant="up" delayMs={200} className="hero-links">
-              <a className="text-link-arrow" href="#work">
-                Explore <span aria-hidden className="text-link-chev" />
-              </a>
-              <a className="text-link-subtle" href={REPO} target="_blank" rel="noreferrer">
-                Open source
-              </a>
-            </ScrollReveal>
+          <div className="work-grid">
+            {[
+              'Landing Pages',
+              'Sales Pages',
+              'Product Pages',
+              'Campaign Microsites',
+            ].map((item, i) => (
+              <ScrollReveal key={item} variant="scale" delayMs={i * 70}>
+                <article className="work-card">{item}</article>
+              </ScrollReveal>
+            ))}
           </div>
         </section>
 
-        <section className="panel panel-words" id="work">
-          <div className="panel-inner words-inner">
-            <ScrollReveal variant="up">
-              <p className="word-huge">Strategy</p>
-            </ScrollReveal>
-            <ScrollReveal variant="up" delayMs={100}>
-              <p className="word-huge word-huge-mid">Paid</p>
-            </ScrollReveal>
-            <ScrollReveal variant="up" delayMs={200}>
-              <p className="word-huge word-huge-end">SEO</p>
-            </ScrollReveal>
-          </div>
-        </section>
-
-        <section className="panel panel-contact" id="contact">
-          <div className="panel-inner contact-inner">
-            <ScrollReveal variant="scale">
-              <a className="contact-mail" href="mailto:hello@lumadma.com">
-                hello@lumadma.com
-              </a>
-            </ScrollReveal>
-          </div>
+        <section id="contact" className="section section-contact">
+          <ScrollReveal variant="up">
+            <div className="section-head">
+              <h2>Contact</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal variant="up" delayMs={80}>
+            <a className="contact-link" href="mailto:hello@lumadma.com">
+              hello@lumadma.com
+            </a>
+          </ScrollReveal>
         </section>
       </main>
 
-      <footer className="footer footer-min">
+      <footer className="footer">
         <p className="footer-line">© {new Date().getFullYear()} Luma DMA</p>
-        <a className="footer-legal" href={REPO} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
       </footer>
-
-      <a
-        className="float-pill"
-        href="mailto:hello@lumadma.com"
-        aria-label="Email Luma DMA"
-      >
-        Contact
-      </a>
     </div>
   )
 }
